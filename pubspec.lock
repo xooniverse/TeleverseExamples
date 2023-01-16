@@ -266,7 +266,7 @@ packages:
       name: televerse
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.3"
+    version: "1.2.6"
   term_glyph:
     dependency: transitive
     description:
