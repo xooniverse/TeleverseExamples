@@ -25,6 +25,16 @@ A bot that rewards users for inviting new users to the bot. This is also a simpl
 
 <hr>
 
+### 👩🏻‍💼 Mod Helper Bot
+A bot that helps moderators in a group to ban users. This bot uses the `command` method to listen to `/ban` commands. [The code for this example can be found here](./lib/mod_helper_bot.dart).
+
+#### What you'll learn:
+1. You'll learn about the `command` method that will be used to listen to commands.
+2. Context objects and how to use them to get the chat id of the chat where the command was sent.
+3. Aliases for API methods and how to use them wisely.
+
+<hr>
+
 ## Thank you ❤️
 
 Thank you for using Televerse. If you have any questions, feel free to ask them in the [Televerse Telegram Group](https://t.me/televersedart).
