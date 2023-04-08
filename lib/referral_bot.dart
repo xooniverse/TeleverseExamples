@@ -32,7 +32,7 @@ void main(List<String> args) {
       // ...
 
       // Send a message to the referrer
-      await bot.sendMessage(
+      await bot.api.sendMessage(
         chatId,
         "Hello ${referrer.firstName}, you have a new referral! 🎉",
       );
@@ -44,7 +44,7 @@ void main(List<String> args) {
     await ctx.reply("Invite your friends to this bot and get points! 🎉");
 
     // Next line is unnecessary if you already know the bot's username. You obviously know it :)
-    final botInfo = await bot.getMe();
+    final botInfo = await bot.api.getMe();
 
     await ctx.reply(
       "Here's your referral link. https://t.me/${botInfo.username}?start=${ctx.message.from!.id}",
