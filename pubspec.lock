@@ -301,10 +301,10 @@ packages:
     dependency: "direct main"
     description:
       name: televerse
-      sha256: "0e072195ea3f1ff7bfb260d509430ee40d6cefafcac1da910c72f0de801c6eb3"
+      sha256: "73f792dc5f1707db569bb7baa7b7a36ba525bb515b7af0f5b460ed07914cf2d3"
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.4"
+    version: "1.5.6"
   term_glyph:
     dependency: transitive
     description:

@@ -35,6 +35,16 @@ A bot that helps moderators in a group to ban users. This bot uses the `command`
 
 <hr>
 
+### ⚡️ Favorite Avenger Bot
+A bot that asks the user to choose their favorite avenger. This bot helps you understand the usage of `Keyboard` and how to setup listeners for regular expressions. [The code for this example can be found here](./lib/favorite_avenger_bot.dart).
+
+#### What you'll learn:
+1. You'll learn about the `Keyboard` class and how to use it to create a keyboard.
+2. You'll learn about the `Televerse.hears` method to listen to messages that match a regular expression.
+
+
+
+
 ## Thank you ❤️
 
 Thank you for using Televerse. If you have any questions, feel free to ask them in the [Televerse Telegram Group](https://t.me/televersedart).
