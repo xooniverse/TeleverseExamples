@@ -18,13 +18,13 @@ void main(List<String> args) {
   bot.command('ban', (ctx) async {
     // Check if the user is the admin
     if (ctx.message.from!.id != admin.id) {
-      ctx.reply("You're not allowed to use this command!");
+      await ctx.reply("You're not allowed to use this command!");
       return;
     }
 
     // Check if the user replied to a message
     if (ctx.message.replyToMessage == null) {
-      ctx.reply("Reply to a message to ban the user!");
+      await ctx.reply("Reply to a message to ban the user!");
       return;
     }
 
@@ -36,12 +36,12 @@ void main(List<String> args) {
 
       // Confirm the ban
       if (success) {
-        ctx.reply("User banned!");
+        await ctx.reply("User banned!");
       } else {
-        ctx.reply("Failed to ban the user!");
+        await ctx.reply("Failed to ban the user!");
       }
     } catch (e) {
-      ctx.reply("I just ran into some problem, Houston!");
+      await ctx.reply("I just ran into some problem, Houston!");
     }
   });
 }
