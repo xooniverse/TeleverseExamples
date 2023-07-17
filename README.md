@@ -6,12 +6,12 @@ This repository contains examples of how to use the [Televerse](https://pub.dev/
 
 Currently, we have the following examples:
 
-- [Basic Bot](#🤖-Basic-Bot)
-- [Referral Bot](#💰-Referral-Bot)
-- [Mod Helper Bot](#👩🏻‍💼-Mod-Helper-Bot)
-- [Favorite Avenger Bot](#⚡️-Favorite-Avenger-Bot)
+- [Basic Bot](#Basic-Bot)
+- [Referral Bot](#Referral-Bot)
+- [Mod Helper Bot](#Mod-Helper-Bot)
+- [Favorite Avenger Bot](#Favorite-Avenger-Bot)
 
-### 🤖 Basic Bot
+### Basic Bot
 
 A basic bot that responds to the user with the count of letters in the message they sent. [The code for this example can be found here](./lib/letter_counter.dart).
 
@@ -23,7 +23,7 @@ A basic bot that responds to the user with the count of letters in the message t
 
 <hr>
 
-### 💰 Referral Bot
+### Referral Bot
 
 A bot that rewards users for inviting new users to the bot. This is also a simple bot that uses just `command` method. [The code for this example can be found here](./lib/referral_bot.dart).
 
@@ -34,7 +34,7 @@ A bot that rewards users for inviting new users to the bot. This is also a simpl
 
 <hr>
 
-### 👩🏻‍💼 Mod Helper Bot
+### Mod Helper Bot
 
 A bot that helps moderators in a group to ban users. This bot uses the `command` method to listen to `/ban` commands. [The code for this example can be found here](./lib/mod_helper.dart).
 
@@ -46,7 +46,7 @@ A bot that helps moderators in a group to ban users. This bot uses the `command`
 
 <hr>
 
-### ⚡️ Favorite Avenger Bot
+### Favorite Avenger Bot
 
 A bot that asks the user to choose their favorite avenger. This bot helps you understand the usage of `Keyboard` and how to setup listeners for regular expressions. [The code for this example can be found here](./lib/favorite_avenger_bot.dart).
 
