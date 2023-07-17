@@ -1,13 +1,12 @@
 name: televerseexamples
 description: This repository contains examples for the televerse package.
 version: 1.0.0
-# homepage: https://www.example.com
 
 environment:
   sdk: ">=2.18.2 <3.0.0"
 
 dependencies:
-  televerse: ^1.5.6
+  televerse: ^1.10.5
 
 dev_dependencies:
   lints: ^2.0.0
