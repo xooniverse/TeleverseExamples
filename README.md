@@ -6,10 +6,10 @@ This repository contains examples of how to use the [Televerse](https://pub.dev/
 
 Currently, we have the following examples:
 
-- [Basic Bot](#Basic-Bot)
-- [Referral Bot](#Referral-Bot)
-- [Mod Helper Bot](#Mod-Helper-Bot)
-- [Favorite Avenger Bot](#Favorite-Avenger-Bot)
+- [Basic Bot](#basic-bot)
+- [Referral Bot](#referral-bot)
+- [Mod Helper Bot](#mod-helper-bot)
+- [Favorite Avenger Bot](#favorite-avenger-bot)
 
 ### Basic Bot
 
