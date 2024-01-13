@@ -9,6 +9,7 @@ final keyboardMenu = KeyboardMenu(name: "my-menu")
     .text("⚙️ Settings", settingsCallback)
     .row()
     .requestLocation("Send Me Location", locationCallback)
+    .oneTime()
     .resized();
 // Add more buttons as needed
 
