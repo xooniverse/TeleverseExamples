@@ -27,20 +27,20 @@ void main() async {
 }
 
 // When a user clicks on the "Hello" button, the bot will answer with "Cool!"
-void helloCallback(CallbackQueryContext ctx) {
-  ctx.answer(text: "Cool!");
+void helloCallback(Context ctx) {
+  ctx.answerCallbackQuery(text: "Cool!");
 }
 
 // When a user clicks on the "First" button, the bot will answer with
 // "That's what you like :)" in an alert
-void firstCallback(CallbackQueryContext ctx) {
-  ctx.answerWithAlert(text: "That's what you like :)");
+void firstCallback(Context ctx) {
+  ctx.answerCallbackQuery(text: "That's what you like :)", showAlert: true);
 }
 
 // When a user clicks on the "Second" button, the bot will edit the message
 // with "How was that?"
-void finishCallback(CallbackQueryContext ctx) {
-  ctx.editMessage("How was that?");
+void finishCallback(Context ctx) {
+  ctx.editMessageText("How was that?");
 
   // Removes the menu listeners from the bot
   bot.removeMenu(startMenu);

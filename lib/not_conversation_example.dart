@@ -38,7 +38,7 @@ void main() {
 }
 
 // Welcome handler
-Future<void> welcomeHandler(MessageContext ctx) async {
+Future<void> welcomeHandler(Context ctx) async {
   // Reply a greeting
   await ctx.reply("Welcome to Televerse!");
   await ctx.reply("What is your name?");
@@ -49,14 +49,14 @@ Future<void> welcomeHandler(MessageContext ctx) async {
 }
 
 // On text handler
-Future<void> onText(MessageContext ctx) async {
+Future<void> onText(Context ctx) async {
   // Get the session
   final ses = ctx.session as MySession;
 
   // Check if the user is in a conversation
   if (ses.step == "name") {
     // Set the user's name
-    ses.name = ctx.message.text!;
+    ses.name = ctx.message!.text!;
 
     // Reply with the user's name
     await ctx.reply("Hello, ${ses.name}!");

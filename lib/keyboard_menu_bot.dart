@@ -14,7 +14,7 @@ final keyboardMenu = KeyboardMenu(name: "my-menu")
 // Add more buttons as needed
 
 // Settings callback
-Future<void> settingsCallback(MessageContext ctx) async {
+Future<void> settingsCallback(Context ctx) async {
   // Reply settings
   await ctx.reply(
     "Here are the bot settings",
@@ -22,10 +22,10 @@ Future<void> settingsCallback(MessageContext ctx) async {
 }
 
 // Handle the incoming location message
-Future<void> locationCallback(MessageContext ctx) async {
+Future<void> locationCallback(Context ctx) async {
   // Reply with the location data
   await ctx.reply(
-    "You are at ${ctx.message.location!.latitude}, ${ctx.message.location!.longitude}",
+    "You are at ${ctx.message?.location?.latitude}, ${ctx.message?.location?.longitude}",
   );
 }
 

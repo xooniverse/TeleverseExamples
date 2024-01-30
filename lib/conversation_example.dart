@@ -16,7 +16,7 @@ void main() async {
 }
 
 // We define the welcomeHandler function to handle the start command.
-Future<void> welcomeHandler(MessageContext ctx) async {
+Future<void> welcomeHandler(Context ctx) async {
   // Reply a greeting
   await ctx.reply("Welcome to Televerse Conversation!");
   await ctx.reply("What is your name?");
@@ -26,5 +26,5 @@ Future<void> welcomeHandler(MessageContext ctx) async {
   var nameCtx = await conversation.waitForTextMessage(chatId: ctx.id);
 
   // Reply with the user's name
-  await ctx.reply("Hello, ${nameCtx.message.text}!");
+  await ctx.reply("Hello, ${nameCtx.message?.text}!");
 }

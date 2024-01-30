@@ -9,8 +9,8 @@ void main() {
 
   /// Adds a listener for audio files
   bot.on(TeleverseEvent.audio, (ctx) async {
-    ctx as MessageContext;
-    final aud = ctx.message.audio;
+    ctx;
+    final aud = ctx.message?.audio;
     final file = await ctx.api.getFile(aud!.fileId);
     // you can now get file bytes using
     // await file.getBytes();
@@ -27,6 +27,6 @@ void main() {
 
   /// Adds a listener for every command (also excuted for /start)
   bot.entity(MessageEntityType.botCommand, (ctx) {
-    ctx.reply("Got a command: ${ctx.message.text}");
+    ctx.reply("Got a command: ${ctx.message?.text}");
   });
 }

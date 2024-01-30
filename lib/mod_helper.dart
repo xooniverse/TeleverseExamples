@@ -17,13 +17,13 @@ void main(List<String> args) {
   // Bot.command method can be used to register a command handler
   bot.command('ban', (ctx) async {
     // Check if the user is the admin
-    if (ctx.message.from!.id != admin.id) {
+    if (ctx.message?.from?.id != admin.id) {
       await ctx.reply("You're not allowed to use this command!");
       return;
     }
 
     // Check if the user replied to a message
-    if (ctx.message.replyToMessage == null) {
+    if (ctx.message?.replyToMessage == null) {
       await ctx.reply("Reply to a message to ban the user!");
       return;
     }

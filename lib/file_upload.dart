@@ -62,52 +62,52 @@ void main() {
   });
 }
 
-MessageHandler handler(String text) {
+Handler handler(String text) {
   return (ctx) async {
-    if (ctx.message.animation != null) {
-      final fileId = ctx.message.animation!.fileId;
+    if (ctx.message?.animation != null) {
+      final fileId = ctx.message!.animation!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithAnimation(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.audio != null) {
-      final fileId = ctx.message.audio!.fileId;
+    if (ctx.message?.audio != null) {
+      final fileId = ctx.message!.audio!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithAudio(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.document != null) {
-      final fileId = ctx.message.document!.fileId;
+    if (ctx.message?.document != null) {
+      final fileId = ctx.message!.document!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithDocument(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.sticker != null) {
-      final fileId = ctx.message.sticker!.fileId;
+    if (ctx.message?.sticker != null) {
+      final fileId = ctx.message!.sticker!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithSticker(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.photo != null) {
-      final fileId = ctx.message.photo!.last.fileId;
+    if (ctx.message?.photo != null) {
+      final fileId = ctx.message!.photo!.last.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithPhoto(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.voice != null) {
-      final fileId = ctx.message.voice!.fileId;
+    if (ctx.message?.voice != null) {
+      final fileId = ctx.message!.voice!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithVoice(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.video != null) {
-      final fileId = ctx.message.video!.fileId;
+    if (ctx.message?.video != null) {
+      final fileId = ctx.message!.video!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithVideo(InputFile.fromFile(fileToUpload!));
     }
-    if (ctx.message.videoNote != null) {
-      final fileId = ctx.message.videoNote!.fileId;
+    if (ctx.message?.videoNote != null) {
+      final fileId = ctx.message!.videoNote!.fileId;
       final file = await ctx.api.getFile(fileId);
       final fileToUpload = await file.download();
       ctx.replyWithVideoNote(InputFile.fromFile(fileToUpload!));

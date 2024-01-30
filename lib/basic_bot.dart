@@ -11,7 +11,7 @@ void main(List<String> args) {
 
   /// Adds the /start command listener and starts the bot
   bot.command("start", (ctx) {
-    final String name = ctx.message.from!.firstName;
+    final String? name = ctx.message?.from?.firstName;
     ctx.reply("Hello $name!");
   });
 
@@ -21,7 +21,7 @@ void main(List<String> args) {
   });
 
   bot.onMessage((ctx) {
-    final String text = ctx.message.text!;
+    final String? text = ctx.message?.text!;
     ctx.reply("You said $text");
   });
 

@@ -47,10 +47,9 @@ void main() {
 
   // Now you can use the session in the bot
   bot.onMessage((ctx) {
-    final sess = ctx.session as MySession;
-    sess.count++;
-    ctx.reply("Times you have sent a message: ${sess.count}");
-    ctx.reply('Session id: ${sess.id}');
+    ctx.session.count++;
+    ctx.reply("Times you have sent a message: ${ctx.session.count}");
+    ctx.reply('Session id: ${ctx.session.id}');
   });
   bot.start();
 }

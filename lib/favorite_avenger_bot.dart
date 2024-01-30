@@ -18,7 +18,7 @@ void main(List<String> arguments) {
   // Start listening for updates and register a handler for the /start command
   bot.start((ctx) async {
     // Get and greet the user by their first name
-    final name = ctx.message.from?.firstName ?? "Anonymous";
+    final name = ctx.message?.from?.firstName ?? "Anonymous";
     await ctx.reply("Hello $name!");
 
     // ✨ Keyboard class can be used to create a keyboard
@@ -52,7 +52,7 @@ void main(List<String> arguments) {
   // So whenever the user sends a message that matches the given regular expression,
   // the handler will be called.
   bot.hears(regexp, (ctx) async {
-    // 👀 The [MessageContext.matches] property will be automatically set to the list of
+    // 👀 The [Context.matches] property will be automatically set to the list of
     // matches from the regular expression.
     final hero = ctx.matches?[0].group(0) ?? "Oh no";
 

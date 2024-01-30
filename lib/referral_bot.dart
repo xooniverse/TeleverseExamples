@@ -8,7 +8,7 @@ void main(List<String> args) {
   // We can use the start method to listen to the start command also to start listening for updates
   bot.start((ctx) async {
     // Send a welcome message
-    await ctx.reply("Hello, ${ctx.message.from!.firstName}!");
+    await ctx.reply("Hello, ${ctx.message!.from!.firstName}!");
 
     // When you attach a listener to the start command, Televerse will automatically be
     // able to parse the start parameter and set it to the [ctx.args] property.
@@ -16,11 +16,11 @@ void main(List<String> args) {
     // So whenever the user is coming from a deep link such as https://t.me/your_bot?start=123
     // the [ctx.args] will be set to "123" and you can start doing your magic. 🦄
 
-    if (ctx.args.isNotEmpty) {
-      int refId = int.parse(ctx.args[0]);
+    if (ctx.args?.isNotEmpty ?? false) {
+      int refId = int.parse(ctx.args![0]);
 
       // You obiviously don't want the user to be able to refer themselves
-      if (refId == ctx.message.from!.id) {
+      if (refId == ctx.message?.from?.id) {
         await ctx.reply("Oh no! You can't refer yourself!");
         return;
       }
@@ -51,7 +51,7 @@ void main(List<String> args) {
     // We can use the `BotLink` class to generate a link to our bot with a start parameter
     BotLink link = BotLink(
       botInfo.username!,
-      startParameter: ctx.message.from!.id.toString(),
+      startParameter: ctx.message!.from!.id.toString(),
     );
 
     await ctx.reply(
