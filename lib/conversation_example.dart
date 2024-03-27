@@ -26,5 +26,5 @@ Future<void> welcomeHandler(Context ctx) async {
   var nameCtx = await conversation.waitForTextMessage(chatId: ctx.id);
 
   // Reply with the user's name
-  await ctx.reply("Hello, ${nameCtx.message?.text}!");
+  await ctx.reply("Hello, ${nameCtx?.message?.text}!");
 }
