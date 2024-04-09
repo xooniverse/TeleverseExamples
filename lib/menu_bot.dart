@@ -6,10 +6,10 @@ final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
 // Create the menu
 final startMenu = InlineMenu(name: "Start Menu")
-    .text("Hello", helloCallback)
+    .text("Hello", helloCallback, data: 'hello')
     .row()
-    .text("Start", firstCallback)
-    .text("Finish", finishCallback);
+    .text("Start", firstCallback, data: 'start')
+    .text("Finish", finishCallback, data: 'finish');
 
 /// This is a general bot that tests different features of the library.
 void main() async {
@@ -27,20 +27,23 @@ void main() async {
 }
 
 // When a user clicks on the "Hello" button, the bot will answer with "Cool!"
-void helloCallback(Context ctx) {
-  ctx.answerCallbackQuery(text: "Cool!");
+void helloCallback(Context ctx) async {
+  await ctx.answerCallbackQuery(text: "Cool!");
 }
 
 // When a user clicks on the "First" button, the bot will answer with
 // "That's what you like :)" in an alert
-void firstCallback(Context ctx) {
-  ctx.answerCallbackQuery(text: "That's what you like :)", showAlert: true);
+void firstCallback(Context ctx) async {
+  await ctx.answerCallbackQuery(
+    text: "That's what you like :)",
+    showAlert: true,
+  );
 }
 
 // When a user clicks on the "Second" button, the bot will edit the message
 // with "How was that?"
-void finishCallback(Context ctx) {
-  ctx.editMessageText("How was that?");
+void finishCallback(Context ctx) async {
+  await ctx.editMessageText("How was that?");
 
   // Removes the menu listeners from the bot
   bot.removeMenu(startMenu);

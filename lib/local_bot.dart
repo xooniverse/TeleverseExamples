@@ -9,7 +9,7 @@ void main(List<String> args) {
   final bot = Bot.local(token);
 
   /// Start polling and setup the handler for the `/start` command.
-  bot.start((ctx) {
-    ctx.reply('Hello, World!');
+  bot.start((ctx) async {
+    await ctx.reply('Hello, World!');
   });
 }

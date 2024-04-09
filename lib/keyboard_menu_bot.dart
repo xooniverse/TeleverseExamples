@@ -34,9 +34,9 @@ void main(List<String> args) {
   bot.attachMenu(keyboardMenu);
 
   // Start the bot and listen for /start command updates
-  bot.start((ctx) {
+  bot.start((ctx) async {
     // Reply with the menu
-    ctx.reply(
+    await ctx.reply(
       "Hello, choose an option:",
       replyMarkup: keyboardMenu,
     );

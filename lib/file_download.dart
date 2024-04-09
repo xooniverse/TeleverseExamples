@@ -17,16 +17,16 @@ void main() {
     // or download it like:
     await file.download();
 
-    ctx.reply("Done downloading file ${file.fileName}");
+    await ctx.reply("Done downloading file ${file.fileName}");
   });
 
   /// Starts the bot and sets up the /start command listener
-  bot.start((ctx) {
-    ctx.reply("Send me an audio file");
+  bot.start((ctx) async {
+    await ctx.reply("Send me an audio file");
   });
 
   /// Adds a listener for every command (also excuted for /start)
-  bot.entity(MessageEntityType.botCommand, (ctx) {
-    ctx.reply("Got a command: ${ctx.message?.text}");
+  bot.entity(MessageEntityType.botCommand, (ctx) async {
+    await ctx.reply("Got a command: ${ctx.message?.text}");
   });
 }
