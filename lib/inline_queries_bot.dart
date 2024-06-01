@@ -3,18 +3,6 @@ import 'package:televerse/televerse.dart';
 
 final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
-class News {
-  final String title;
-  final String pic;
-  final String url;
-
-  const News({
-    required this.title,
-    required this.url,
-    required this.pic,
-  });
-}
-
 void main(List<String> args) {
   bot.onInlineQuery((ctx) async {
     final builder = InlineQueryResultBuilder();
