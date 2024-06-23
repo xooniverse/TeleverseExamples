@@ -8,7 +8,7 @@ final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
 class AutoReplier implements Transformer {
   @override
-  Map<String, dynamic> fn(
+  Map<String, dynamic> transform(
     APIMethod method,
     Map<String, dynamic> payload,
     Context? ctx,

@@ -9,7 +9,7 @@ class Logger implements Middleware {
   // The `fn` is the middleware function that will be excuted over the context.
   // Calling the `next` function will execute the following middleware or the main handler.
   @override
-  void fn(Context ctx, NextFunction next) {
+  void handle(Context ctx, NextFunction next) {
     // Suppose we're just printing the update id
     print(ctx.update.updateId);
 
