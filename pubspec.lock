@@ -314,10 +314,10 @@ packages:
     dependency: "direct main"
     description:
       name: televerse
-      sha256: "8160138ee2789dfcb8b348153a702534955749236f956a88d2a252c8278dc5ac"
+      sha256: "7e03f412e88dc54e8489b7df3d00f4acc97fda5a7a8e508314a96b8b87b0a7c7"
       url: "https://pub.dev"
     source: hosted
-    version: "1.19.1"
+    version: "1.19.2"
   term_glyph:
     dependency: transitive
     description:

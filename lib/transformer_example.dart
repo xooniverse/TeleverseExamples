@@ -6,32 +6,27 @@ final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
 // Create a Transformer or import one if already built
 
-class AutoReplier implements Transformer {
+class AutoReplyEnforcer implements Transformer {
   @override
-  Map<String, dynamic> transform(
+  Future<Map<String, dynamic>> transform(
+    APICaller call,
     APIMethod method,
-    Map<String, dynamic> payload,
-    Context? ctx,
-  ) {
-    // We'll force the user to reply to the message bot sends
-
+    Payload payload,
+  ) async {
     final isSendMethod = APIMethod.sendMethods.contains(method);
     final isNotChatAction = method != APIMethod.sendChatAction;
 
-    // If bot is calling a `send` method and if it is not `sendChatAction`
-    // Then we edit the payload and attach the force reply markup.
     if (isSendMethod && isNotChatAction) {
-      payload["reply_markup"] = ForceReply().toJson();
+      payload.params["reply_markup"] = ForceReply().toJson();
     }
 
-    // Return the modified payload
-    return payload;
+    return await call(method, payload);
   }
 }
 
 void main(List<String> args) {
   // Attach the Transformer to the bot.
-  bot.use(AutoReplier());
+  bot.use(AutoReplyEnforcer());
 
   // Continue setting up your bot
 
