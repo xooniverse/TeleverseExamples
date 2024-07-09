@@ -16,14 +16,17 @@ void main() async {
   // Attach it to the bot
   bot.attachMenu(startMenu);
 
-  // Start the bot and listen for /start command updates
-  bot.start((ctx) {
+  // Register handler for the /start commmand
+  bot.command('start', (ctx) {
     // Reply with the menu
     ctx.reply(
       "Hello, choose an option:",
       replyMarkup: startMenu,
     );
   });
+
+  // Start the bot and listen for updates
+  await bot.start();
 }
 
 // When a user clicks on the "Hello" button, the bot will answer with "Cool!"

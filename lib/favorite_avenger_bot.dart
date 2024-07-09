@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:televerse/televerse.dart';
 
-void main(List<String> arguments) {
+void main(List<String> arguments) async {
   Bot bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
   // All the different gifs for the avengers
@@ -15,8 +15,8 @@ void main(List<String> arguments) {
     "Oh no": "https://media.giphy.com/media/9Fticsj7froxbpd5Sg/giphy.gif",
   };
 
-  // Start listening for updates and register a handler for the /start command
-  bot.start((ctx) async {
+  // Register a handler for the /start command
+  bot.command('start', (ctx) async {
     // Get and greet the user by their first name
     final name = ctx.message?.from?.firstName ?? "Anonymous";
     await ctx.reply("Hello $name!");
@@ -60,4 +60,7 @@ void main(List<String> arguments) {
     final gif = gifs[hero] ?? gifs["Oh no"]!;
     await ctx.replyWithAnimation(InputFile.fromUrl(gif));
   });
+
+// Start the bot
+  await bot.start();
 }

@@ -12,7 +12,10 @@ void main() async {
   /// the start command and just ask the user for their name.
   ///
   /// So let's start the bot and setup a handler for the start command.
-  bot.start(welcomeHandler);
+  bot.command('start', welcomeHandler);
+
+  // Start the bot
+  await bot.start();
 }
 
 // We define the welcomeHandler function to handle the start command.

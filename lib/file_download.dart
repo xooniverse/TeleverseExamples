@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:televerse/televerse.dart';
 
 /// This bot allows you to downloads the audio files you send to it
-void main() {
+void main() async {
   /// Creates the bot instance
   final Bot bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
@@ -20,8 +20,8 @@ void main() {
     await ctx.reply("Done downloading file ${file.fileName}");
   });
 
-  /// Starts the bot and sets up the /start command listener
-  bot.start((ctx) async {
+  /// Sets up the /start command listener
+  bot.command('start', (ctx) async {
     await ctx.reply("Send me an audio file");
   });
 
@@ -29,4 +29,7 @@ void main() {
   bot.entity(MessageEntityType.botCommand, (ctx) async {
     await ctx.reply("Got a command: ${ctx.message?.text}");
   });
+
+  /// Starts the bot
+  await bot.start();
 }

@@ -56,10 +56,13 @@ void main() {
   bot.onWebAppData(handler("web app data"));
   bot.onAnimation(handler("animation"));
 
-  /// Starts the bot and sets up the /start command listener
-  bot.start((ctx) {
+  /// Setup /start command handler
+  bot.command('start', (ctx) {
     ctx.reply("Hi, tap this 👉 /send");
   });
+
+  /// Starts the bot
+  bot.start();
 }
 
 Handler handler(String text) {

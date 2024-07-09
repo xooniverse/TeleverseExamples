@@ -3,7 +3,7 @@ import 'package:televerse/televerse.dart';
 
 final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
-void main(List<String> args) {
+void main(List<String> args) async {
   bot.onInlineQuery((ctx) async {
     final builder = InlineQueryResultBuilder();
     for (int i = 0; i < catPics.length; i++) {
@@ -21,7 +21,7 @@ void main(List<String> args) {
     await ctx.answerInlineQuery(builder.build());
   });
 
-  bot.start((ctx) async {
+  bot.command('start', (ctx) async {
     final menu =
         InlineMenu().switchInlineQueryCurrentChat("Switch to Inline", 'cats');
     await ctx.reply(
@@ -29,6 +29,8 @@ void main(List<String> args) {
       replyMarkup: menu,
     );
   });
+
+  await bot.start();
 }
 
 /// Cat Pics to be shown in the 'cats' inline query

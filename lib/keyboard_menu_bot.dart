@@ -29,16 +29,19 @@ Future<void> locationCallback(Context ctx) async {
   );
 }
 
-void main(List<String> args) {
+void main(List<String> args) async {
   // Attach it to the bot
   bot.attachMenu(keyboardMenu);
 
-  // Start the bot and listen for /start command updates
-  bot.start((ctx) async {
+  // Setup handler for the /start command
+  bot.command('start', (ctx) async {
     // Reply with the menu
     await ctx.reply(
       "Hello, choose an option:",
       replyMarkup: keyboardMenu,
     );
   });
+
+  // Start the bot
+  await bot.start();
 }

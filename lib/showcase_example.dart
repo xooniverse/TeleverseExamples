@@ -12,11 +12,8 @@ void main() async {
   /// Listen to commands
   bot.command("hello", (ctx) async => await ctx.reply("Hello!"));
 
-  /// Since v1.3.1 you can listen for `/start`, `/help` and `/settings` commands
-  /// in an easier way.
-  ///
-  /// Don't forget that calling bot.start will also start listening to updates.
-  bot.start((ctx) async => await ctx.reply("Hello!"));
+  /// Setup the /start command handler
+  bot.command('start', (ctx) async => await ctx.reply("Hello!"));
 
   /// Sets up the /settings command listener
   bot.settings((ctx) async => await ctx.reply("Settings"));
@@ -86,4 +83,7 @@ void main() async {
       "${ctx.message?.getEntityText(MessageEntityType.mention)} was mentioned!",
     );
   });
+
+  /// Finally start the bot
+  await bot.start();
 }

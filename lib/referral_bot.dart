@@ -2,11 +2,11 @@ import 'dart:io';
 import 'package:televerse/telegram.dart';
 import 'package:televerse/televerse.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
   Bot bot = Bot(Platform.environment['BOT_TOKEN']!);
 
-  // We can use the start method to listen to the start command also to start listening for updates
-  bot.start((ctx) async {
+  // Attach a handler for processing the /start command
+  bot.command('start', (ctx) async {
     // Send a welcome message
     await ctx.reply("Hello, ${ctx.message!.from!.firstName}!");
 
@@ -58,4 +58,7 @@ void main(List<String> args) {
       "Here's your referral link. ${link.https}",
     );
   });
+
+  // Start the bot with bot.start method.
+  await bot.start();
 }
