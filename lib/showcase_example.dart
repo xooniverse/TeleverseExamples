@@ -65,10 +65,7 @@ void main() async {
   /// So with the [Bot.on] method you can listen for particular updates. Yeah, that indeed means
   /// that you can listen for all commands simply by listening for the [TeleverseEvent.command] event.
   bot.on(TeleverseEvent.command, (ctx) async {
-    await ctx.reply("This will be executed for every command");
-    await ctx.reply(
-      "That really includes /start, /help and /settings and all other commands you define.",
-    );
+    await ctx.reply("This will be executed for every command unhandled");
 
     // Do your logic here
     if (ctx.message?.text == "/televerse") {
