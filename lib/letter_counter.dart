@@ -20,15 +20,11 @@ void main(List<String> args) {
     await ctx.reply("Hello $name!");
   });
 
-  /// The [on] method can be used to register a handler for a specific event
-  /// You'll have to pass two arguments: the event and the handler
+  /// The [onText] method can be used to register a handler for a incoming text messages
   ///
   /// The handler is a function that takes a [Context] as an argument.
   /// The context type depends on the event type. This is why we have to cast it.
-  bot.on(TeleverseEvent.text, (ctx) async {
-    // Since we're handling a text message, we can cast the context to [Context]
-    ctx;
-
+  bot.onText((ctx) async {
     // We can get the message text and count the letters
     final int letterCount = ctx.message!.text!.length;
 

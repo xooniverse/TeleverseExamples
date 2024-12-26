@@ -7,7 +7,7 @@ environment:
   sdk: ">=2.18.2 <3.0.0"
 
 dependencies:
-  televerse: ^1.22.0
+  televerse: ^2.1.1
 
 dev_dependencies:
   lints: ^4.0.0

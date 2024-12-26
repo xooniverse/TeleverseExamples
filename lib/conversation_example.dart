@@ -26,8 +26,18 @@ Future<void> welcomeHandler(Context ctx) async {
 
   // ✨ The magic happens here ✨
   // We can wait for the user's reply using the `waitForTextMessage` method.
-  var nameCtx = await conversation.waitForTextMessage(chatId: ctx.id);
+  var response = await conversation.waitForTextMessage(chatId: ctx.id);
+
+  if (response is! ConversationSuccess<Context>) {
+    await ctx.reply("Something went wrong.");
+
+    response as ConversationFailure<Context>;
+    print(response.state);
+    print(response.message);
+
+    return;
+  }
 
   // Reply with the user's name
-  await ctx.reply("Hello, ${nameCtx?.message?.text}!");
+  await ctx.reply("Hello, ${response.data.message?.text}!");
 }
