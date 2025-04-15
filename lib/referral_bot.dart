@@ -28,7 +28,7 @@ void main(List<String> args) async {
       ChatID chatId = ChatID(refId);
 
       // Get Referrer's profile
-      Chat referrer = await chatId.get();
+      ChatFullInfo referrer = await chatId.get();
 
       // Add points to the referrer on database 🎉
       // ...
