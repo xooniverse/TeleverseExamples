@@ -6,7 +6,7 @@ void main(List<String> args) async {
   final token = Platform.environment['BOT_TOKEN']!;
 
   /// Use the [Bot.local] constructor to create a bot instance.
-  final bot = Bot.local(token);
+  final bot = Bot.local(token, 'http://localhost:8081');
 
   /// Attach the /start command handler
   bot.command('start', (ctx) async {

@@ -6,10 +6,10 @@ final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
 // Create the menu
 final startMenu = InlineMenu(name: "Start Menu")
-    .text("Hello", helloCallback, data: 'hello')
+    .text("Hello", 'hello', helloCallback)
     .row()
-    .text("Start", firstCallback, data: 'start')
-    .text("Finish", finishCallback, data: 'finish');
+    .text("Start", 'start', firstCallback)
+    .text("Finish", 'finish', finishCallback);
 
 /// This is a general bot that tests different features of the library.
 void main() async {
@@ -47,7 +47,4 @@ void firstCallback(Context ctx) async {
 // with "How was that?"
 void finishCallback(Context ctx) async {
   await ctx.editMessageText("How was that?");
-
-  // Removes the menu listeners from the bot
-  bot.removeMenu(startMenu);
 }

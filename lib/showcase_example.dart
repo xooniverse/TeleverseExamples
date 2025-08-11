@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:televerse/telegram.dart';
 import 'package:televerse/televerse.dart';
 
 /// This is a general example of how to use the Televerse library.
@@ -24,14 +25,14 @@ void main() async {
   /// The [bot.hears] method allows you to listen to messages that match a regular expression.
   /// You can use the `Context.matches` getter to access the matches of the regular expression.
   bot.hears(RegExp(r'Hello, (.*)!'), (ctx) async {
-    await ctx.reply('${ctx.matches![1]} must be a doing great!');
+    await ctx.reply('${ctx.matches[1]} must be a doing great!');
   });
 
   /// Usage of Keyboard
   /// Televerse provided a handy way to create keyboards and inline keyboards.
   final keyboard = Keyboard()
-    ..addText("Hello")
-    ..addText("World")
+    ..text("Hello")
+    ..text("World")
     ..row()
     ..requestLocation("Send Location")
     ..oneTime()
@@ -76,7 +77,7 @@ void main() async {
   bot.entity(MessageEntityType.mention, (ctx) async {
     // And use the `Message.geteEntityText` method to extract the value.
     await ctx.reply(
-      "${ctx.message?.getEntityText(MessageEntityType.mention)} was mentioned!",
+      "${ctx.getEntityText(MessageEntityType.mention)} was mentioned!",
     );
   });
 

@@ -178,10 +178,10 @@ packages:
     dependency: transitive
     description:
       name: http_parser
-      sha256: "40f592dd352890c3b60fec1b68e786cefb9603e05ff303dbc4dda49b304ecdf4"
+      sha256: "178d74305e7866013777bab2c3d8726205dc5a4dd935297175b19a23a2e66571"
       url: "https://pub.dev"
     source: hosted
-    version: "4.1.0"
+    version: "4.1.2"
   io:
     dependency: transitive
     description:
@@ -394,10 +394,10 @@ packages:
     dependency: "direct main"
     description:
       name: televerse
-      sha256: "5b9f6d88b26d827fa673dbecfbb1361aee87fed5a3adfe06a9214999980af7b9"
+      sha256: "295adc374e1f5b855709756f00803e46685c4042eb95b38cb89d00388662381e"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.0"
+    version: "3.0.0-dev.0"
   term_glyph:
     dependency: transitive
     description:

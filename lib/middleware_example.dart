@@ -5,10 +5,9 @@ final bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
 // Create a middleware or import one if already built
 
-class Logger implements Middleware {
+class Logger {
   // The `fn` is the middleware function that will be excuted over the context.
   // Calling the `next` function will execute the following middleware or the main handler.
-  @override
   void handle(Context ctx, NextFunction next) {
     // Suppose we're just printing the update id
     print(ctx.update.updateId);
@@ -21,7 +20,7 @@ class Logger implements Middleware {
 
 void main(List<String> args) {
   // Attach the middleware to the bot
-  bot.use(Logger());
+  bot.use(Logger().handle);
 
   // Continue setting up your bot
 

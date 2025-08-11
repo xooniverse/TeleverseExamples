@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:televerse/telegram.dart';
 import 'package:televerse/televerse.dart';
 
 /// This bot allows you to downloads the audio files you send to it

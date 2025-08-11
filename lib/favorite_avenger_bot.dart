@@ -27,13 +27,13 @@ void main(List<String> arguments) async {
     //
     // Play around with the keyboard options to see how it works.
     Keyboard optionsKeyboard = Keyboard()
-        .addText("Iron Man")
-        .addText("Captain America")
+        .text("Iron Man")
+        .text("Captain America")
         .row()
-        .addText("Thor")
-        .addText("Hulk")
+        .text("Thor")
+        .text("Hulk")
         .row()
-        .addText("Black Widow")
+        .text("Black Widow")
         .resized();
 
     // Now we can simply send the keyboard as reply markup to the user
@@ -54,7 +54,7 @@ void main(List<String> arguments) async {
   bot.hears(regexp, (ctx) async {
     // 👀 The [Context.matches] property will be automatically set to the list of
     // matches from the regular expression.
-    final hero = ctx.matches?[0].group(0) ?? "Oh no";
+    final hero = ctx.matches[0].group(0) ?? "Oh no";
 
     // Get the gif for the hero & send it to the user
     final gif = gifs[hero] ?? gifs["Oh no"]!;

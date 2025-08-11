@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:televerse/telegram.dart';
 import 'package:televerse/televerse.dart';
 
 /// This is a simple bot that tests the markup feature.

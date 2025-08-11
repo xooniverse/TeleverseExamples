@@ -3,7 +3,7 @@ import 'package:televerse/televerse.dart';
 
 Bot bot = Bot(Platform.environment["BOT_TOKEN"]!);
 
-Handler handler(String text) {
+UpdateHandler handler(String text) {
   return (ctx) async {
     await ctx.reply("Got a $text");
   };

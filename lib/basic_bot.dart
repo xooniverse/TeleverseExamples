@@ -17,7 +17,7 @@ void main(List<String> args) {
 
   /// Setups the /who command listener
   bot.command('who', (ctx) {
-    ctx.reply("I'm ${bot.me.firstName}");
+    ctx.reply("I'm ${ctx.me.me?.firstName}");
   });
 
   bot.onMessage((ctx) {

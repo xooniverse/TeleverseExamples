@@ -28,7 +28,7 @@ void main(List<String> args) async {
       ChatID chatId = ChatID(refId);
 
       // Get Referrer's profile
-      ChatFullInfo referrer = await chatId.get();
+      ChatFullInfo referrer = await bot.api.getChat(chatId);
 
       // Add points to the referrer on database 🎉
       // ...
@@ -46,16 +46,10 @@ void main(List<String> args) async {
     await ctx.reply("Invite your friends to this bot and get points! 🎉");
 
     // Next line is unnecessary if you already know the bot's username. You obviously know it :)
-    final botInfo = await bot.getMe();
-
-    // We can use the `BotLink` class to generate a link to our bot with a start parameter
-    BotLink link = BotLink(
-      botInfo.username!,
-      startParameter: ctx.message!.from!.id.toString(),
-    );
+    final botInfo = await bot.api.getMe();
 
     await ctx.reply(
-      "Here's your referral link. ${link.https}",
+      "Here's your referral link. https://t.me/${botInfo.username}?start=${ctx.from?.id}",
     );
   });
 

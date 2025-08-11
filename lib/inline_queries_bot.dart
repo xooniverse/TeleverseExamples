@@ -11,7 +11,7 @@ void main(List<String> args) async {
         "cat$i",
         catPics[i],
         catPics[i],
-        replyMarkup: InlineKeyboard().addUrl(
+        replyMarkup: InlineKeyboard().url(
           "Source",
           catPics[i],
         ),
@@ -23,7 +23,7 @@ void main(List<String> args) async {
 
   bot.command('start', (ctx) async {
     final menu =
-        InlineMenu().switchInlineQueryCurrentChat("Switch to Inline", 'cats');
+        InlineMenu().switchInlineCurrentChat("Switch to Inline", 'cats');
     await ctx.reply(
       "Tap on the bellow buttons to enter inline mode and see cool results.",
       replyMarkup: menu,

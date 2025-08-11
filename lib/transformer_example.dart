@@ -22,11 +22,17 @@ class AutoReplyEnforcer implements Transformer {
 
     return await call(method, payload);
   }
+
+  @override
+  String? get description => 'Adds ForceReply markup to all send methods.';
+
+  @override
+  String get name => 'auto-reply-enforcer';
 }
 
 void main(List<String> args) {
   // Attach the Transformer to the bot.
-  bot.use(AutoReplyEnforcer());
+  bot.api.use(AutoReplyEnforcer());
 
   // Continue setting up your bot
 

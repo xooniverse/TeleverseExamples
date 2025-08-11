@@ -65,7 +65,7 @@ void main() {
   bot.start();
 }
 
-Handler handler(String text) {
+UpdateHandler handler(String text) {
   return (ctx) async {
     if (ctx.message?.animation != null) {
       final fileId = ctx.message!.animation!.fileId;
